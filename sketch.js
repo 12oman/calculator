@@ -4,15 +4,15 @@
 // draw loop, create bubbles to match result from calculator
 //  
 var bubObjs = [];
-var result = 1000;
-var screen;
+var result = 90;
+var sketchScreen;
 // will need to change this variable from calculator result.
 
 function setup() {
 
-    screen = createCanvas(windowWidth, windowHeight);
-    screen.position(0,0);
-    screen.style('z-index', '-1');
+    sketchScreen = createCanvas(windowWidth, windowHeight);
+    sketchScreen.position(0,0);
+    sketchScreen.style('z-index', '-1');
 
 	//bubble array calling the bubble constructor
 	for (i = 0; i < result; i++) {
@@ -23,7 +23,7 @@ function setup() {
 
 // this draw function is actually a loop from the p5.js library
 function draw() {
-    background(150,150,255);
+    background(40, 40, 40);
     // clear();
     for (i = 0; i < bubObjs.length; i++) {
     bubObjs[i].display();
@@ -46,7 +46,7 @@ function Bubble() {
     strokeWeight(2);
     // strokeColor(0,0,0);
 	noFill();
-	ellipse(this.x, this.y, 20, 20);
+	ellipse(this.x, this.y, 70, 70);
 		},
 		this.move = function() {
 			this.x += random(-10,10);

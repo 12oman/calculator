@@ -1,10 +1,72 @@
 //create an empty array for entries = [];
+var entries = [];
 // initialise a total = 0;
+var total = 10;
 
 //create a cache 'temp' to hold the entered key-value in text format''
-// on a given button being pushed store it: text$("button").on('click', function() {
-// 	var val = $(this).text();
 
+// listen for a click
+clicked()
+
+// when clicked send the even.target.value
+function clicked () {
+  document.addEventListener('click', getTargetValue);
+  
+  console.log("button clicked");
+}
+
+function getTargetValue () {
+  let button = event.target.value
+  console.log(button + " was clicked");
+  
+  testValue(button);
+  // if value is a function do that function
+  //else store value in entries
+}
+
+function testValue (button) {
+  if (!isNaN(button) || button === '.') {
+    placeNumber(button)
+  } else if (button === 'AC') {
+    AC()
+  } else if (button === 'CE') {
+    clr()
+  } else if (button === '=') {
+    calculate(entries);
+  } else {
+    placeNumber(button);
+  }
+}
+
+function placeNumber(value){
+  console.log(value + " push the number function");
+  entries = entries + value;
+  console.log(entries);
+  return entries;
+}
+
+function AC() {
+  console.log(button + "all clear function");
+}
+
+function clr() {
+  console.log(button +"clear last number");
+}
+
+function calculate(entries) {
+  // console.log(entries + "calculate function");
+  console.log("calculate function");
+  console.log(entries);
+  result = eval(entries);
+  refreshScreen(result);
+  console.log(result);
+  return result;
+}
+
+// total = result;
+function refreshScreen(result) {
+  document.getElementById("display").innerHTML = result;
+}
   // test if this temp value returns a number, add to temp
 // alternatives are either a decimal point, a clear function, or an operator
 //   if (!isNaN(val) || val === '.') {

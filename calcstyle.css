@@ -4,7 +4,13 @@ html,body{
     padding:0;
     /* background-color: rgb(81, 163, 184); */
 }
-/* calculator style */
+#calc-body {
+   position: absolute;
+   padding-top: 10%;
+   padding-left: 35%;
+}
+
+/* key style */
 .keypad {
     width: 30%;
     height: 70%;
@@ -46,4 +52,11 @@ html,body{
     border: none;
 }
 /* screen */
+#display {
+    font-size: 46;
+    color: rgb(250, 208, 208);
+    height: 270 px;
+    text-align: center;
+
+}
 /* background */
